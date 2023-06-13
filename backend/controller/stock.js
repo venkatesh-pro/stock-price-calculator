@@ -15,7 +15,9 @@ exports.getStockListByTypingPrice = async (req, res) => {
   try {
     const { url } = req.body;
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: "new",
+    });
     const page = await browser.newPage();
     try {
       const screenerURL = `https://www.screener.in${url}`;
