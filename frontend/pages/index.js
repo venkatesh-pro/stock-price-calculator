@@ -40,7 +40,7 @@ const StockMarketCalculator = () => {
 
   const searchResult = async (value) => {
     const { data } = await axios.post(
-      "http://localhost:5000/api/getStockListByTyping",
+      "https://stock-api-um4s.onrender.com/api/getStockListByTyping",
       {
         companyName: value,
       }
@@ -54,7 +54,7 @@ const StockMarketCalculator = () => {
   const fetchThePriceByNameFunction = async (value, option, index) => {
     // console.log(option);
     const { data } = await axios.post(
-      "http://localhost:5000/api/getStockListByTypingPrice",
+      "https://stock-api-um4s.onrender.com/api/getStockListByTypingPrice",
       {
         url: option.link,
       }
